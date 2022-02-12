@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		1AA7977827B84A230023D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7977727B84A230023D601 /* AppDelegate.swift */; };
 		1AA7977A27B84A230023D601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7977927B84A230023D601 /* SceneDelegate.swift */; };
-		1AA7977C27B84A230023D601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7977B27B84A230023D601 /* ViewController.swift */; };
 		1AA7977F27B84A230023D601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7977D27B84A230023D601 /* Main.storyboard */; };
 		1AA7978127B84A260023D601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7978027B84A260023D601 /* Assets.xcassets */; };
 		1AA7978427B84A260023D601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7978227B84A260023D601 /* LaunchScreen.storyboard */; };
 		1AA7978F27B84A260023D601 /* HotCoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7978E27B84A260023D601 /* HotCoffeeTests.swift */; };
 		1AA7979927B84A260023D601 /* HotCoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7979827B84A260023D601 /* HotCoffeeUITests.swift */; };
 		1AA7979B27B84A260023D601 /* HotCoffeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7979A27B84A260023D601 /* HotCoffeeUITestsLaunchTests.swift */; };
+		1AA797A927B84C3B0023D601 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA797A827B84C3B0023D601 /* OrdersTableViewController.swift */; };
+		1AA797AB27B84C790023D601 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA797AA27B84C790023D601 /* AddOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		1AA7977427B84A230023D601 /* HotCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7977727B84A230023D601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AA7977927B84A230023D601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1AA7977B27B84A230023D601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AA7977E27B84A230023D601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AA7978027B84A260023D601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AA7978327B84A260023D601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		1AA7979427B84A260023D601 /* HotCoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotCoffeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7979827B84A260023D601 /* HotCoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCoffeeUITests.swift; sourceTree = "<group>"; };
 		1AA7979A27B84A260023D601 /* HotCoffeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCoffeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1AA797A827B84C3B0023D601 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		1AA797AA27B84C790023D601 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,9 @@
 		1AA7977627B84A230023D601 /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				1AA797A727B84ABA0023D601 /* Controllers */,
 				1AA7977727B84A230023D601 /* AppDelegate.swift */,
 				1AA7977927B84A230023D601 /* SceneDelegate.swift */,
-				1AA7977B27B84A230023D601 /* ViewController.swift */,
 				1AA7977D27B84A230023D601 /* Main.storyboard */,
 				1AA7978027B84A260023D601 /* Assets.xcassets */,
 				1AA7978227B84A260023D601 /* LaunchScreen.storyboard */,
@@ -125,6 +127,15 @@
 				1AA7979A27B84A260023D601 /* HotCoffeeUITestsLaunchTests.swift */,
 			);
 			path = HotCoffeeUITests;
+			sourceTree = "<group>";
+		};
+		1AA797A727B84ABA0023D601 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AA797A827B84C3B0023D601 /* OrdersTableViewController.swift */,
+				1AA797AA27B84C790023D601 /* AddOrderViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA7977C27B84A230023D601 /* ViewController.swift in Sources */,
 				1AA7977827B84A230023D601 /* AppDelegate.swift in Sources */,
 				1AA7977A27B84A230023D601 /* SceneDelegate.swift in Sources */,
+				1AA797A927B84C3B0023D601 /* OrdersTableViewController.swift in Sources */,
+				1AA797AB27B84C790023D601 /* AddOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
