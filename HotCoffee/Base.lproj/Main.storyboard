@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hAB-LD-Kdu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeTypeTableViewCell" id="hAB-LD-Kdu">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hAB-LD-Kdu" id="gkj-Ep-icr">
@@ -80,17 +80,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DuO-qt-0ip" id="5wt-JT-IbY"/>
+                                    <outlet property="delegate" destination="DuO-qt-0ip" id="jMc-4J-s4h"/>
+                                </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sOy-TR-Ubp">
-                                <rect key="frame" x="104" y="525" width="206" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-Gj-NR1">
-                                <rect key="frame" x="107" y="626" width="200" height="34"/>
+                                <rect key="frame" x="107" y="660" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1Ll-LX-nlu"/>
                                 </constraints>
@@ -98,7 +94,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-EQ-3LK">
-                                <rect key="frame" x="107" y="678" width="200" height="34"/>
+                                <rect key="frame" x="107" y="712" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="l1S-zR-EwZ"/>
                                 </constraints>
@@ -109,22 +105,33 @@
                         <viewLayoutGuide key="safeArea" id="ne1-ss-GoL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sOy-TR-Ubp" firstAttribute="centerX" secondItem="y9g-eP-Lod" secondAttribute="centerX" id="5xg-xh-VAV"/>
                             <constraint firstItem="rQv-Q5-oZz" firstAttribute="height" secondItem="y9g-eP-Lod" secondAttribute="height" multiplier="0.5" id="Jww-FJ-WTi"/>
                             <constraint firstItem="ttU-EQ-3LK" firstAttribute="top" secondItem="jAX-Gj-NR1" secondAttribute="bottom" constant="18" id="Le6-mq-EII"/>
                             <constraint firstItem="ttU-EQ-3LK" firstAttribute="centerX" secondItem="y9g-eP-Lod" secondAttribute="centerX" id="MPv-au-Tas"/>
                             <constraint firstItem="rQv-Q5-oZz" firstAttribute="leading" secondItem="ne1-ss-GoL" secondAttribute="leading" id="OJI-0G-ngh"/>
                             <constraint firstItem="rQv-Q5-oZz" firstAttribute="width" secondItem="y9g-eP-Lod" secondAttribute="width" id="QNW-zp-pQZ"/>
-                            <constraint firstItem="jAX-Gj-NR1" firstAttribute="top" secondItem="sOy-TR-Ubp" secondAttribute="bottom" constant="70" id="o0F-Tm-Muw"/>
+                            <constraint firstItem="ne1-ss-GoL" firstAttribute="bottom" secondItem="ttU-EQ-3LK" secondAttribute="bottom" constant="96" id="dMw-iz-Lk4"/>
                             <constraint firstItem="rQv-Q5-oZz" firstAttribute="top" secondItem="ne1-ss-GoL" secondAttribute="top" id="qE4-cs-a0J"/>
                             <constraint firstItem="jAX-Gj-NR1" firstAttribute="centerX" secondItem="y9g-eP-Lod" secondAttribute="centerX" id="qIa-gq-OFp"/>
-                            <constraint firstItem="sOy-TR-Ubp" firstAttribute="top" secondItem="rQv-Q5-oZz" secondAttribute="bottom" constant="48" id="qs7-GW-etJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="gWc-u6-cia">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="YBp-xJ-TWw"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="44j-kB-afu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="YBp-xJ-TWw">
+                            <connections>
+                                <action selector="close" destination="DuO-qt-0ip" id="8l9-Z1-GDh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="44j-kB-afu">
+                            <connections>
+                                <action selector="save" destination="DuO-qt-0ip" id="ekn-7g-3Jt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextFIeld" destination="jAX-Gj-NR1" id="23f-RQ-HQX"/>
+                        <outlet property="tableView" destination="rQv-Q5-oZz" id="qb9-Lj-Wsf"/>
+                        <outlet property="totalTextField" destination="ttU-EQ-3LK" id="I19-Y7-pCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1L1-tW-x9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
